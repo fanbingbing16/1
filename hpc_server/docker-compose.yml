@@ -1,0 +1,66 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - $PWD/mysql/data:/var/lib/mysql
+      - $PWD/mysql/conf/my.cnf:/etc/my.cnf
+      - $PWD/mysql/source:/docker-entrypoint-initdb.d
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_DATABASE=hospital"
+      - "TZ=Asia/Shanghai"
+      - SET_CONTAINER_TIMEZONE=true
+      - CONTAINER_TIMEZONE=Asia/Shanghai
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+  server:
+    image: hpc_server
+    depends_on:
+      - mysql
+    build:
+      context: ./hospital-server
+      args:
+        - NODE_ENV=development
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+    #  - CONTAINER_TIMEZONE=Asia/Shanghai
+      - TZ=Asia/Shanghai
+      - SET_CONTAINER_TIMEZONE=true
+    volumes:
+      - /etc/localtime:/etc/localtime
+      # - /home/hospital_server_report:/srv/server/report
+    ports:
+      - "3000:3000"
+      - "8080:8080"
+  #admin:
+    #image: 192.168.159.99:5000/srv_admin:v2
+    # build:
+    #   context: ./hospital-admin
+    #   args:
+    #     - NODE_ENV=development
+    # environment:
+    #   - NODE_ENV=development
+    #ports:
+    #  - "3001:80"
+  #pc:
+    #image: 192.168.159.99:5000/srv_pc:v1
+    # build:
+    #   context: ./hospital-pc
+    #   args:
+    #     - NODE_ENV=development
+    # environment:
+    #   - NODE_ENV=development
+    #ports:
+    #  - "3002:80"
+
+volumes: 
+  # caddy_data:
+  #   external: true
+  # caddy_config:
+  db:

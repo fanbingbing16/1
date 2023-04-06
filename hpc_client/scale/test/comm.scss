@@ -1,0 +1,152 @@
+.card {
+				border-radius: 10px;
+				background: white;
+				width: 100%;
+				padding: 20rpx;
+				margin-top: 28rpx;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+
+				/deep/ .open {
+					background-color: rgba(0, 0, 0, 0) !important;
+					margin-top: -20rpx;
+					/deep/ .cl-button::after{
+						width: 0;
+						height: 0;
+					}
+				}
+
+				/deep/ .open::after {
+					width: 0;
+					height: 0;
+				}
+				/deep/ .type {
+					background-color: #e0afb2;
+					width: 30%;
+					margin-top: -20rpx;
+					margin-left: -20rpx;
+					font-size: 16px;
+					border-top-left-radius: 10px;
+					border-bottom-right-radius: 10px;
+					border-top-right-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+
+				/deep/ .cl-button.cl-button--primary {
+					background-color: #e0afb2;
+				}
+
+				/deep/ .one-type:nth-child(2) {
+					margin-top: 20rpx;
+				}
+
+				.header {
+					// margin-bottom: 20rpx;
+				}
+
+				.comm {
+					margin-top: 20rpx;
+					border: 1px solid #ececec;
+					border-radius: 20rpx;
+					background: #fafafa;
+					min-height: 100px;
+
+					.text {
+						padding: 20rpx;
+
+						.cl-text {
+							margin-top: 20rpx;
+						}
+					}
+				}
+
+				.one-type {
+					display: flex;
+					flex-direction: column;
+					margin-bottom: 20rpx;
+
+					.advice {
+						margin-top: 20rpx;
+
+						span {
+							list-style: 44rpx;
+							text-indent: 2em;
+						}
+
+						/deep/ .cl-text {
+							line-height: 44rpx;
+							text-indent: 2em;
+						}
+					}
+
+					.header {
+						display: flex;
+						align-items: center;
+
+						.cl-text:nth-child(3) {
+							margin-right: 20rpx;
+						}
+
+						cl-text:nth-child(3) {
+							margin-right: 20rpx;
+						}
+
+						.shu {
+							width: 2px;
+							background: #e0afb2;
+							margin-right: 10px;
+							margin-top: 3px;
+							height: 13px;
+						}
+					}
+
+				}
+
+				.one-type:last-child {
+					margin-bottom: 0;
+				}
+
+				.content-padd {
+					padding: 10rpx;
+				}
+
+				.row {
+					display: flex;
+					flex-wrap: wrap;
+					border: 1px solid #dcdfe6;
+					border-bottom: 0;
+					border-right: 0;
+
+					.col {
+						position: relative;
+
+						.cl-text:nth-child(1) {
+							height: 88rpx;
+
+						}
+					}
+
+					.col::before {
+						content: "";
+						position: absolute;
+						display: block;
+						background-color: #dcdfe6;
+						bottom: 0;
+						left: 0;
+						height: 1px;
+						width: 100%;
+					}
+
+					.col::after {
+						content: "";
+						position: absolute;
+						display: block;
+						background-color: #dcdfe6;
+						right: 0;
+						top: 0;
+						height: 100%;
+						width: 1px;
+					}
+				}
+			}

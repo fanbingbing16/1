@@ -1,0 +1,325 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "熊孩子自评",
+				"navigationBarBackgroundColor": "#618cfc",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/index/category",
+			"style": {
+				"navigationBarTitleText": "测评",
+				"navigationBarBackgroundColor": "#618cfc",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/index/consultation",
+			"style": {
+				"navigationBarTitleText": "咨询师",
+				"navigationBarBackgroundColor": "#618cfc",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/index/my",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/commVue/swiper",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"subPackages": [{
+			"root": "article",
+			"pages": [{
+					"path": "article",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "webview",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "consultation",
+			"pages": [{
+					"path": "inputMessage",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "experts",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "experts/businessCard",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "scale",
+			"pages": [{
+					"path": "test/test",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "test/introduce",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "test/report",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "test/cardOne",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "test/cardFull",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "family/family",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "family/create",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "shared/reception",
+					"style": {
+						// "navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "shared/confirm",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "my",
+			"pages": [{
+					"path": "order",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "report",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "userInfo",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "member",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "settled",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "settle/inputMessage",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "application",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "settle/agreement",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "settle/violations",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+
+		{
+			"root": "sdk",
+			"pages": [{
+					"path": "gm/appLogin",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "gm/captcha",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "gm/passportLogin",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "gm/setPss",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "wx/getPhoneNumber",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "wx/getHander",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "wx/login",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+
+
+
+		{
+			"root": "debug",
+			"pages": [{
+					"path": "upload",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "pay",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "debug",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		}
+	],
+	"preloadRule": {
+		"pages/index/category": {
+			"network": "all",
+			"packages": ["scale"]
+		},
+		"pages/index/my": {
+			"network": "all",
+			"packages": ["sdk"]
+		},
+		"scale/test/test": {
+			"network": "all",
+			"packages": ["scale"]
+		},
+		"pages/index/consultation": {
+			"network": "all",
+			"packages": ["consultation"]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "熊孩子自评",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#ACACAC",
+		"selectedColor": "#5E8AFF",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/icon/tabbar/index.png",
+				"selectedIconPath": "static/icon/tabbar/index-in.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/index/category",
+				"iconPath": "static/icon/tabbar/category.png",
+				"selectedIconPath": "static/icon/tabbar/category-in.png",
+				"text": "测评"
+			},
+			{
+				"pagePath": "pages/index/consultation",
+				"iconPath": "static/icon/tabbar/category.png",
+				"selectedIconPath": "static/icon/tabbar/category-in.png",
+				"text": "咨询"
+			},
+			{
+				"pagePath": "pages/index/my",
+				"iconPath": "static/icon/tabbar/my.png",
+				"selectedIconPath": "static/icon/tabbar/my-in.png",
+				"text": "我的"
+			}
+		]
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"cl-(.*)": "cl-uni/components/cl-$1/cl-$1.vue"
+		}
+	}
+}
